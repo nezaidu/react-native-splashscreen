@@ -18,6 +18,7 @@ import android.widget.LinearLayout;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
+import com.facebook.react.bridge.ActivityEventListener;
 
 
 public class RCTSplashScreen extends ReactContextBaseJavaModule {
@@ -26,9 +27,9 @@ public class RCTSplashScreen extends ReactContextBaseJavaModule {
 
     private Activity activity;
 
-    public RCTSplashScreen(ReactApplicationContext reactContext, Activity activity) {
+    public RCTSplashScreen(ReactApplicationContext reactContext) {
         super(reactContext);
-        this.activity = activity;
+        this.activity = getCurrentActivity();
         showSplashScreen();
     }
 
